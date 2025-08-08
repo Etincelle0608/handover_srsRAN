@@ -1,0 +1,701 @@
+options:
+  parameters:
+    author: ''
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: multi_ue_scenario
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: srsRAN_multi_UE
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: noise_amplitude1
+  id: variable_qtgui_chooser
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    label0: ''
+    label1: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    labels: '[]'
+    num_opts: '3'
+    option0: '0.001'
+    option1: '0.03'
+    option2: '0.05'
+    option3: '3'
+    option4: '4'
+    options: '[0, 1, 2]'
+    orient: Qt.QVBoxLayout
+    type: real
+    value: '0.001'
+    widget: combo_box
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1264, 156.0]
+    rotation: 0
+    state: enabled
+- name: noise_amplitude2
+  id: variable_qtgui_chooser
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    label0: ''
+    label1: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    labels: '[]'
+    num_opts: '3'
+    option0: '0.001'
+    option1: '0.03'
+    option2: '0.05'
+    option3: '3'
+    option4: '4'
+    options: '[0, 1, 2]'
+    orient: Qt.QVBoxLayout
+    type: real
+    value: '0.001'
+    widget: combo_box
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1432, 156.0]
+    rotation: 0
+    state: enabled
+- name: noise_amplitude3
+  id: variable_qtgui_chooser
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    label0: ''
+    label1: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    labels: '[]'
+    num_opts: '3'
+    option0: '0.001'
+    option1: '0.03'
+    option2: '0.05'
+    option3: '3'
+    option4: '4'
+    options: '[0, 1, 2]'
+    orient: Qt.QVBoxLayout
+    type: real
+    value: '0.001'
+    widget: combo_box
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1576, 156.0]
+    rotation: 0
+    state: enabled
+- name: noise_amplitude4
+  id: variable_qtgui_chooser
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    label0: ''
+    label1: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    labels: '[]'
+    num_opts: '3'
+    option0: '0.001'
+    option1: '0.03'
+    option2: '0.05'
+    option3: '3'
+    option4: '4'
+    options: '[0, 1, 2]'
+    orient: Qt.QVBoxLayout
+    type: real
+    value: '0.001'
+    widget: combo_box
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1280, 460.0]
+    rotation: 0
+    state: enabled
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '11520000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [184, 12]
+    rotation: 0
+    state: enabled
+- name: slow_down_ratio
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: Time Slow Down Ratio
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '1'
+    step: '1'
+    stop: '32'
+    value: '1'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1320, 12.0]
+    rotation: 0
+    state: true
+- name: vehicular_speed1
+  id: variable_qtgui_chooser
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    label0: ''
+    label1: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    labels: '[]'
+    num_opts: '4'
+    option0: '10'
+    option1: '30'
+    option2: '60'
+    option3: '70'
+    option4: '4'
+    options: '[0, 1, 2]'
+    orient: Qt.QVBoxLayout
+    type: int
+    value: '60'
+    widget: combo_box
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1272, 308.0]
+    rotation: 0
+    state: enabled
+- name: vehicular_speed2
+  id: variable_qtgui_chooser
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    label0: ''
+    label1: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    labels: '[]'
+    num_opts: '4'
+    option0: '10'
+    option1: '30'
+    option2: '60'
+    option3: '70'
+    option4: '4'
+    options: '[0, 1, 2]'
+    orient: Qt.QVBoxLayout
+    type: int
+    value: '60'
+    widget: combo_box
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1432, 300.0]
+    rotation: 0
+    state: enabled
+- name: vehicular_speed3
+  id: variable_qtgui_chooser
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    label0: ''
+    label1: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    labels: '[]'
+    num_opts: '4'
+    option0: '10'
+    option1: '30'
+    option2: '60'
+    option3: '70'
+    option4: '4'
+    options: '[0, 1, 2]'
+    orient: Qt.QVBoxLayout
+    type: int
+    value: '60'
+    widget: combo_box
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1584, 308.0]
+    rotation: 0
+    state: enabled
+- name: vehicular_speed4
+  id: variable_qtgui_chooser
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    label0: ''
+    label1: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    labels: '[]'
+    num_opts: '4'
+    option0: '10'
+    option1: '30'
+    option2: '60'
+    option3: '70'
+    option4: '4'
+    options: '[0, 1, 2]'
+    orient: Qt.QVBoxLayout
+    type: int
+    value: '60'
+    widget: combo_box
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1432, 452.0]
+    rotation: 0
+    state: enabled
+- name: zmq_hwm
+  id: variable
+  parameters:
+    comment: ''
+    value: '-1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [432, 12.0]
+    rotation: 0
+    state: enabled
+- name: zmq_timeout
+  id: variable
+  parameters:
+    comment: ''
+    value: '500'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [304, 12.0]
+    rotation: 0
+    state: enabled
+- name: blocks_throttle_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [424, 476.0]
+    rotation: 0
+    state: enabled
+- name: blocks_throttle_0_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [480, 140.0]
+    rotation: 0
+    state: enabled
+- name: blocks_throttle_0_0_0
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [440, 300.0]
+    rotation: 0
+    state: enabled
+- name: blocks_throttle_0_1
+  id: blocks_throttle
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [416, 604.0]
+    rotation: 0
+    state: enabled
+- name: channels_dynamic_channel_model_0
+  id: channels_dynamic_channel_model
+  parameters:
+    K: '4.0'
+    LOS: 'False'
+    N: '8'
+    affinity: ''
+    alias: ''
+    cfo_maxdev: 1e3
+    cfo_stdev: '0.01'
+    comment: ''
+    delays: '[0,0.00000031,0.00000071,0.00000109,0.00000173,0.00000251]'
+    fD: (vehicular_speed3/3.6)*(36.85/3)
+    mags: '[0,-1,-9,-10,-15,-20]'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_amp: noise_amplitude3
+    ntaps: '6'
+    samp_rate: samp_rate
+    seed: '0'
+    sro_maxdev: 1e3
+    sro_stdev: '0.01'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [744, 372.0]
+    rotation: 0
+    state: enabled
+- name: channels_dynamic_channel_model_0_0
+  id: channels_dynamic_channel_model
+  parameters:
+    K: '4.0'
+    LOS: 'False'
+    N: '8'
+    affinity: ''
+    alias: ''
+    cfo_maxdev: 1e3
+    cfo_stdev: '0.01'
+    comment: ''
+    delays: '[0,0.00000031,0.00000071,0.00000109,0.00000173,0.00000251]'
+    fD: (vehicular_speed4/3.6)*(36.85/3)
+    mags: '[0,-1,-9,-10,-15,-20]'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_amp: noise_amplitude4
+    ntaps: '6'
+    samp_rate: samp_rate
+    seed: '0'
+    sro_maxdev: 1e3
+    sro_stdev: '0.01'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [752, 508.0]
+    rotation: 0
+    state: enabled
+- name: channels_dynamic_channel_model_1
+  id: channels_dynamic_channel_model
+  parameters:
+    K: '4.0'
+    LOS: 'False'
+    N: '8'
+    affinity: ''
+    alias: ''
+    cfo_maxdev: 1e3
+    cfo_stdev: '0.01'
+    comment: ''
+    delays: '[0,0.00000031,0.00000071,0.00000109,0.00000173,0.00000251]'
+    fD: (vehicular_speed1/3.6)*(36.85/3)
+    mags: '[0,-1,-9,-10,-15,-20]'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_amp: noise_amplitude1
+    ntaps: '6'
+    samp_rate: samp_rate
+    seed: '0'
+    sro_maxdev: 1e3
+    sro_stdev: '0.01'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [736, 44.0]
+    rotation: 0
+    state: enabled
+- name: channels_dynamic_channel_model_2
+  id: channels_dynamic_channel_model
+  parameters:
+    K: '4.0'
+    LOS: 'False'
+    N: '8'
+    affinity: ''
+    alias: ''
+    cfo_maxdev: 1e3
+    cfo_stdev: '0.01'
+    comment: ''
+    delays: '[0,0.00000031,0.00000071,0.00000109,0.00000173,0.00000251]'
+    fD: (vehicular_speed2/3.6)*(36.85/3)
+    mags: '[0,-1,-9,-10,-15,-20]'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_amp: noise_amplitude2
+    ntaps: '6'
+    samp_rate: samp_rate
+    seed: '0'
+    sro_maxdev: 1e3
+    sro_stdev: '0.01'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [744, 204.0]
+    rotation: 0
+    state: enabled
+- name: zeromq_rep_sink_0
+  id: zeromq_rep_sink
+  parameters:
+    address: tcp://127.0.0.1:2100
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: zmq_hwm
+    pass_tags: 'False'
+    timeout: zmq_timeout
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1096, 116.0]
+    rotation: 0
+    state: true
+- name: zeromq_rep_sink_0_0
+  id: zeromq_rep_sink
+  parameters:
+    address: tcp://127.0.0.1:3200
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: zmq_hwm
+    pass_tags: 'False'
+    timeout: zmq_timeout
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1088, 276.0]
+    rotation: 0
+    state: true
+- name: zeromq_rep_sink_0_1
+  id: zeromq_rep_sink
+  parameters:
+    address: tcp://127.0.0.1:2001
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: zmq_hwm
+    pass_tags: 'False'
+    timeout: zmq_timeout
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1104, 444.0]
+    rotation: 0
+    state: true
+- name: zeromq_rep_sink_0_1_0
+  id: zeromq_rep_sink
+  parameters:
+    address: tcp://127.0.0.1:3001
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: zmq_hwm
+    pass_tags: 'False'
+    timeout: zmq_timeout
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1112, 580.0]
+    rotation: 0
+    state: true
+- name: zeromq_req_source_0
+  id: zeromq_req_source
+  parameters:
+    address: tcp://127.0.0.1:2000
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: zmq_hwm
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    pass_tags: 'False'
+    timeout: zmq_timeout
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [56, 124.0]
+    rotation: 0
+    state: true
+- name: zeromq_req_source_0_0
+  id: zeromq_req_source
+  parameters:
+    address: tcp://127.0.0.1:3000
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: zmq_hwm
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    pass_tags: 'False'
+    timeout: zmq_timeout
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [56, 268.0]
+    rotation: 0
+    state: true
+- name: zeromq_req_source_1
+  id: zeromq_req_source
+  parameters:
+    address: tcp://127.0.0.1:2101
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: zmq_hwm
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    pass_tags: 'False'
+    timeout: zmq_timeout
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [24, 452.0]
+    rotation: 0
+    state: true
+- name: zeromq_req_source_1_0
+  id: zeromq_req_source
+  parameters:
+    address: tcp://127.0.0.1:3201
+    affinity: ''
+    alias: ''
+    comment: ''
+    hwm: zmq_hwm
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    pass_tags: 'False'
+    timeout: zmq_timeout
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [24, 588.0]
+    rotation: 0
+    state: true
+
+connections:
+- [blocks_throttle_0, '0', channels_dynamic_channel_model_0, '0']
+- [blocks_throttle_0_0, '0', channels_dynamic_channel_model_1, '0']
+- [blocks_throttle_0_0_0, '0', channels_dynamic_channel_model_2, '0']
+- [blocks_throttle_0_1, '0', channels_dynamic_channel_model_0_0, '0']
+- [channels_dynamic_channel_model_0, '0', zeromq_rep_sink_0_1, '0']
+- [channels_dynamic_channel_model_0_0, '0', zeromq_rep_sink_0_1_0, '0']
+- [channels_dynamic_channel_model_1, '0', zeromq_rep_sink_0, '0']
+- [channels_dynamic_channel_model_2, '0', zeromq_rep_sink_0_0, '0']
+- [zeromq_req_source_0, '0', blocks_throttle_0_0, '0']
+- [zeromq_req_source_0_0, '0', blocks_throttle_0_0_0, '0']
+- [zeromq_req_source_1, '0', blocks_throttle_0, '0']
+- [zeromq_req_source_1_0, '0', blocks_throttle_0_1, '0']
+
+metadata:
+  file_format: 1
