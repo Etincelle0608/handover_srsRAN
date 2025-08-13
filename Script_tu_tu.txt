@@ -1,0 +1,63 @@
+########################################
+# 1 - Stage de base : Ubuntu 22.04
+########################################
+FROM ubuntu:22.04 AS base
+
+# Éviter les prompts interactifs
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Afficher la liste des dépôts (debug)
+RUN echo "=== Liste des dépôts APT ===" && cat /etc/apt/sources.list
+
+# Mettre à jour + installer paquets nécessaires
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        software-properties-common \
+        ca-certificates \
+        python3 \
+        python3-pip \
+        python3-dev \
+        build-essential \
+        git \
+        curl \
+        wget \
+    && rm -rf /var/lib/apt/lists/*
+
+# Installer dépendances Python globales
+RUN python3 -m pip install --no-cache-dir pymongo click pyroute2 ipaddress python-iptables
+
+
+########################################
+# 2 - Stage Open5GS : basé sur "base"
+########################################
+FROM base AS open5gs
+
+WORKDIR /open5gs
+
+# (Ici, tu clones et compiles Open5GS ou copies ton code)
+# Exemple :
+# RUN git clone https://github.com/open5gs/open5gs.git .
+# RUN mes commandes de build...
+
+
+########################################
+# 3 - Stage final : image runtime légère
+########################################
+FROM ubuntu:22.04 AS final
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Installer uniquement ce qui est nécessaire pour exécuter Open5GS
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /open5gs
+
+# Copier les binaires depuis l'étape "open5gs"
+COPY --from=open5gs /open5gs /open5gs
+
+# Commande par défaut
+CMD ["bash"]
+
